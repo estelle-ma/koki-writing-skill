@@ -8,11 +8,10 @@ A standalone skill from my own creator workflow, shared as a configurable public
 
 ## See the result
 
-**A voice note becomes a readable article, while keeping the author's voice.** These are actual mobile views of my article about running a creator workflow with AI.
+**An English script becomes a readable English article.** This is a real mobile rendering of an excerpt from my English article, “What the Midterms Mean for America’s AI Race,” with source notes and an English copy button.
 
 <p align="center">
-  <img src="docs/media/article-opening.jpg" width="300" alt="Real article: title, red emphasis and mobile paragraphs">
-  <img src="docs/media/article-detail.jpg" width="300" alt="Real article: section heading, links and body typography">
+  <img src="docs/media/article-opening-en.jpg" width="375" alt="Actual English article: English headline, body, source notes and Copy article button">
 </p>
 
 | You provide | You get |
@@ -21,7 +20,7 @@ A standalone skill from my own creator workflow, shared as a configurable public
 | Claims and topics that need support | Sources, relevant real images, and captions |
 | Your layout preferences | A Raphael layout with a copy-to-WeChat button |
 
-Try the small real example: [original voice note](examples/voice-note.txt) → [edited Markdown](examples/article.md) → [Raphael HTML](examples/article-preview.html). Download the HTML and open it in a browser to try its copy button. The HTML is an excerpt; the screenshots above show the larger article.
+Try the English example: [source script excerpt](examples/source-script-en.txt) → [article Markdown](examples/article-en.md) → [Raphael HTML](examples/article-preview-en.html). Download the HTML and open it in a browser to try **Copy article**. The screenshot and downloadable files show the same English excerpt.
 
 ## Quick start
 
@@ -50,14 +49,14 @@ Paste a transcript/draft or attach a text file. Include any must-keep wording, v
 ```text
 Use $koki-wechat-article.
 Input: the transcript I attached.
-Language: Chinese. Keep my voice, opinions, and meaningful repetition.
+Language: English. Keep my voice, opinions, and meaningful repetition.
 Verify names and factual claims; add relevant real images with sources.
 Use the Raphael sspai theme and check mobile readability.
 Deliver editable Markdown, local layout HTML, WeChat rich text, images, and source notes.
 Save the draft in ./outputs/my-article/.
 ```
 
-Want to try before preparing your own material? Point the agent to `examples/voice-note.txt` and ask it to make a layout from that excerpt.
+Want to try before preparing your own material? Point the agent to `examples/source-script-en.txt` and ask it to make a layout in English from that excerpt.
 
 ### 5. Revise and use the result
 
@@ -66,7 +65,7 @@ Keep the body text and approved images unchanged. Only adjust paragraphs,
 heading hierarchy, emphasis, and image placement for phone reading.
 ```
 
-Open the delivered layout HTML in a browser → click **复制公众号正文** → paste into WeChat's editor → check the images and final appearance → publish when ready. The Markdown remains editable for later revisions.
+Open the delivered layout HTML in a browser → click **Copy article** → paste into WeChat's editor → check the images and final appearance → publish when ready. The Markdown remains editable for later revisions.
 
 | Deliverable | Purpose |
 | --- | --- |
