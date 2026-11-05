@@ -1,3 +1,58 @@
+[English](#english) · [简体中文](#简体中文)
+
+## English
+
+# Local Raphael layout
+
+This repository includes an adapter for a specific official public Raphael frontend build. It is not a cloud-draft API, does not mount the editor, upload articles, or operate a WeChat account.
+
+Supported official build:
+
+https://publish.raphael.app/assets/index-B1xyRFkz.js
+
+SHA-256:
+
+`a72c53c9b1eba634cfa27d01f62c882d9d6035aa41be04bc801d203ba3e3b069`
+
+Download it from the official source into your working directory. The adapter verifies the hash and rejects an unknown version. If the official build changes, inspect its API and update the adapter; never silently use homemade CSS while claiming Raphael output.
+
+## Run
+
+Install dependencies in the repository root:
+
+```sh
+npm install --ignore-scripts
+```
+
+Supply the article, output directory, and separately downloaded official build:
+
+```sh
+node skills/koki-wechat-article/scripts/render_raphael.cjs \
+  --input ./article/article.md \
+  --out ./outputs/article \
+  --bundle ./work/raphael-bundle.js \
+  --theme sspai
+```
+
+Use `--jsdom` to point to an existing jsdom 26 module if needed. Images resolve relative to the Markdown file; only local images within its directory are accepted and embedded.
+
+Use `<p class="image-caption">` for captions. A short research block can use:
+
+```html
+<aside class="evidence" data-evidence-id="example">
+  <p class="evidence-title">Research note | Topic</p>
+  <p>Supporting material and verifiable source links.</p>
+</aside>
+```
+
+Leave blank lines around these blocks. The adapter produces a layout preview, WeChat rich text, and engine/image records. Inspect actual reading at approximately 390 px and 360 px. After copying into WeChat's editor, verify image ingestion and display there.
+
+Raphael frontend code is not redistributed here. See the [official repository](https://github.com/liuxiaopai-ai/raphael-publish) for its license and updates.
+
+---
+
+## 简体中文
+
 # Raphael 本地排版
 
 本仓库包含一个针对特定 Raphael 官方公开前端版本的本地适配器。它不是云端草稿接口，不挂载编辑器、不上传文章，也不操作微信公众号。
