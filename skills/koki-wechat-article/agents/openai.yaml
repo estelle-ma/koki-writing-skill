@@ -1,0 +1,4 @@
+interface:
+  display_name: "公众号写作与排版"
+  short_description: "保留口播原话和个人语气，查证观点、寻找真实配图，用 Raphael 制作公众号本地稿"
+  default_prompt: "用 $koki-wechat-article 整理这份口播，保留我的语气，补真实配图并制作公众号本地排版。"
