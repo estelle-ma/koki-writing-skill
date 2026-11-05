@@ -1,0 +1,16 @@
+{
+  "name": "koki-creator-skills",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check:privacy": "python3 scripts/check_public_package.py",
+    "render:wechat": "node skills/koki-wechat-article/scripts/render_raphael.cjs"
+  },
+  "dependencies": {
+    "jsdom": "26.1.0"
+  }
+}
