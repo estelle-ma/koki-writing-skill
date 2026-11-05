@@ -1,22 +1,17 @@
-# 公开版的隐私处理
+# Privacy / 隐私说明
 
-公开版保留可复用的写作与剪辑方法，移除或改造了这些内容：
+## English
 
-- 原作者机器上的桌面、文档、缓存与素材绝对路径。
-- 原作者的固定照片、杂志封面、本地文件名与身份收尾素材。
-- 原作者的固定评论口令、频道引导和只适用于某次视频的文案。
-- 已完成任务的项目名称、项目或素材标识、编辑器私有链接和短期授权参数。
-- 私人账号、联系方式、未公开文稿、原片、聊天记录和工作日志。
-- 会把安装 Skill 误当成公开发布、跨服务上传或无限授权的表述。
+This public edition contains reusable instructions, source code where needed, and neutral example configuration. Private paths, historical project identifiers, private editor links, original media, unpublished transcripts, credentials, and personal closing assets have been removed. The public website and social profiles in the READMEs are intentionally included as author contact links.
 
-公开包只包含文本、源代码和示例配置，不含照片、截图、音视频、第三方前端构建产物或凭证。
+Keep your configuration in `creator.local.yaml` and media outside the public repository. These files, common media formats, working outputs, and credentials are covered by `.gitignore`. Only import material needed and authorized for the current task. Installing a skill does not authorize uploads, messages, scheduling, or public publication; follow the current user's request.
 
-## 自己配置时
+Run `python3 scripts/check_public_package.py` before contributing and inspect the staged files and commit metadata. The scanner checks common secret formats, private paths, email addresses, project identifiers, and local references; it does not replace review. `.gitignore` cannot remove anything already committed. Revoke exposed credentials before cleaning history.
 
-1. 私人配置使用 `creator.local.yaml`，素材放在自己的非公开目录。
-2. 文件路径由当前使用者提供；不要从历史项目名或原作者身份猜测素材。
-3. 只导入当前任务确实需要且已获授权的素材。技能安装本身不是上传或公开发布指令。
-4. 发文、发视频、发消息和修改排期，仍以使用者当次明确请求为准。
-5. 修改后先运行公开文件检查，再人工查看待提交文件及 Git 提交中的作者信息。
+## 简体中文
 
-`.gitignore` 只能防止部分误提交，不能清除已经进入历史的文件。若凭证曾经被公开，应先撤销或轮换凭证，再处理仓库历史。
+公开版只包含可复用的技能说明、必要源代码和中性的示例配置。已移除私人路径、历史项目标识、私有编辑器链接、原片、未公开文稿、凭证及个人固定收尾素材。README 中的个人网站与社交主页是按作者要求公开保留的联系入口。
+
+私人配置放在 `creator.local.yaml`，素材保存在自己的非公开目录。配置、常见媒体、工作文件、导出文件和凭证已加入 `.gitignore`。只导入当前任务需要且已获授权的素材；安装 Skill 本身不代表允许上传、发消息、排期或公开发布，仍按当前用户的请求执行。
+
+贡献前运行 `python3 scripts/check_public_package.py`，再人工检查待提交文件和提交署名。扫描器检查常见密钥、私人路径、邮箱、项目标识与相对引用，不能替代人工审阅。`.gitignore` 不能清除历史文件；凭证一旦泄露，应先撤销或轮换，再处理历史。

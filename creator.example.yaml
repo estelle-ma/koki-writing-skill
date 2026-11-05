@@ -1,31 +1,11 @@
-# 复制为工作区中的 creator.local.yaml，按自己的偏好填写。
-# 这是给 Agent 读取的示例，不是自动执行或账号授权配置。
+# Copy to creator.local.yaml in your working project. / 复制到工作项目。
+# Read by the agent; not an executable or account authorization file.
 creator:
-  display_name: "创作者"
+  display_name: "Creator"
   identity_line: ""
-
 media:
   topic_directory: "./private-media/topic"
   closing_images: []
-
 article:
   raphael_theme: "sspai"
   output_directory: "./outputs/article"
-
-short_video:
-  width: 1080
-  height: 1920
-  playback_rate: 1.1
-  title_font: "Smiley Sans"
-  english_caption_style: "Dogme"
-  english_caption_font: "Archivo Black"
-  chinese_caption_font: "Noto Sans SC"
-  closing_cta_lines: []
-  closing_anchor: "自我介绍或收尾句"
-  add_music: false
-
-long_video:
-  width: 1920
-  height: 1080
-  keep_original_playback_rate: true
-  add_chapter_navigation: false

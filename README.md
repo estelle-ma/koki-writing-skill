@@ -1,58 +1,56 @@
-# Koki Creator Skills
+# Koki Writing Skill
 
-把一个想法做成公众号、竖屏短视频和长视频的 AI 创作工作流。
+[![English](https://img.shields.io/badge/English-2563EB?style=for-the-badge)](README.md) [![简体中文](https://img.shields.io/badge/简体中文-DC2626?style=for-the-badge)](README.zh-CN.md)
 
-由 Koki 的日常使用流程整理，公开版移除了个人路径、私有素材、历史项目标识和账号信息。适合在支持 Agent Skills 的工具中使用；视频流程主要配合 ChatCut，公众号使用 Raphael Publish 排版。
+Turn spoken ideas into articles that still sound like you, with evidence, real images, and WeChat-ready Raphael layouts.
 
-## 三个 Skill
+A standalone skill from my own creator workflow, shared as a configurable public edition. Instructions and workflow references are available in English and Simplified Chinese.
 
-| Skill | 用途 |
-| --- | --- |
-| [koki-wechat-article](skills/koki-wechat-article/SKILL.md) | 把口播和观点稿整理成保留作者语气的公众号文章，查证、配真实图片、排版与本地交付 |
-| [vertical-talking-head](skills/vertical-talking-head/SKILL.md) | 竖屏单人口播：降噪、精剪、按语言分组的字幕、首帧封面、素材与结尾引导 |
-| [long-video-editing](skills/long-video-editing/SKILL.md) | 教程与访谈长视频：文稿、结构、截图、小窗、字幕、章节、封面及 shownote |
+## What it does
 
-## 使用方法
+- Preserve the author's wording, stance, emotion, and narrative order.
+- Add traceable evidence and real images beside the relevant passages.
+- Keep approved text and images when revising; respect layout-only requests.
+- Deliver editable Markdown, copyable WeChat HTML, images, and source records.
+- Check actual mobile layouts at approximately 390 px and 360 px.
 
-把本仓库链接发给 Codex，并说明：
+## Install & use
 
-> 用 $skill-installer 安装这个仓库 skills/ 下的三个 Skill。保留我已有的同名技能，先说明冲突位置。
-
-也可以下载仓库，把需要的整个 Skill 文件夹放进工具的个人技能目录。Codex 的本地技能目录与安装方式以 [OpenAI 官方文档](https://learn.chatgpt.com/docs/build-skills) 为准。出现同名技能时先备份或选择一个版本。
-
-安装后，可以这样说：
+Send [this repository](https://github.com/leilei926524-tech/koki-writing-skill) to your agent and ask:
 
 ```text
-用 $koki-wechat-article 把这份口播整理成公众号文章，保留我的语气，补真实配图，交付可编辑正文和本地排版。
-
-用 $vertical-talking-head 剪这段竖屏口播，使用我提供的素材目录，按中文意思组做字幕，保留可编辑项目。
-
-用 $long-video-editing 整理这次访谈，先给我完整转写和结构建议，等我确定文稿再剪。
+Install the skill in skills/koki-wechat-article from this repository. If a skill with the same name already exists, keep it and tell me about the conflict before replacing it.
 ```
 
-## 改成自己的风格
+Alternatively, download the repository and copy the complete `skills/koki-wechat-article` folder into your tool's personal skill directory. Use a tool that supports Agent Skills; editing also needs an available editor connection.
 
-将 [creator.example.yaml](creator.example.yaml) 复制成工作区里的 `creator.local.yaml`，填写自己的名字、素材目录、字幕偏好和结尾引导。这个配置由 Agent 阅读，不会自动连接账号或上传素材。
-
-`creator.local.yaml`、私人素材、工作文件和导出文件已加入 `.gitignore`。不要把自己的照片、未公开文稿或登录信息提交到仓库。详细说明见 [PRIVACY.md](PRIVACY.md)。
-
-未提供结尾照片或引导文案时，Agent 应跳过对应部分或说明缺失，不寻找原作者的私人素材，也不替使用者补造身份与经历。
-
-## 工具与依赖
-
-- 视频需要当前环境已连接、可用的编辑器工具。ChatCut 的安装和能力以 [官方文档](https://chatcut.io/docs/web-plugin) 为准；本仓库不包含 ChatCut 官方插件及其内置技能。
-- Raphael 排版可使用 [官网](https://publish.raphael.app/)，或本仓库的本地适配脚本。脚本用法见 [Raphael 本地排版](skills/koki-wechat-article/references/raphael.md)。只使用写作或视频流程时，无需安装 Node 依赖。
-- 如果运行 Raphael 本地适配器，需要 Node.js 20+ 和 `jsdom` 26.1.0。在仓库根目录运行 `npm install --ignore-scripts`。Raphael 引擎由使用者从官方地址单独下载；不随本仓库分发。
-- 视频生成、图像生成、素材库、字体、编辑器与外部服务的费用及使用条款由各自提供方决定。
-
-## 检查公开文件
-
-```sh
-python3 scripts/check_public_package.py
+```text
+Use $koki-wechat-article to turn this transcript into a WeChat article. Keep my voice, verify factual claims, find real images, and deliver editable Markdown and a local Raphael layout.
 ```
 
-检查本仓库公开文件中的常见密钥格式、私人绝对路径、联系方式、项目标识和不应提交的媒体文件。检查结果不能代替人工审阅。
+The default [SKILL.md](skills/koki-wechat-article/SKILL.md) is in English. A [Chinese edition](skills/koki-wechat-article/SKILL.zh-CN.md) is included; references contain both languages. Output language follows your request.
 
-## 开源许可
+## Make it yours
 
-本仓库原创 Skill 文本和本地适配代码采用 [MIT](LICENSE) 许可。Raphael、ChatCut、外部字体及其他第三方资源分别遵守其自身许可；本仓库不授予这些产品、服务或素材的使用权。
+Copy [creator.example.yaml](creator.example.yaml) to `creator.local.yaml` in your working project and fill in your name, media directories, and preferences. The agent reads this file; it does not connect accounts or execute by itself. Missing private media or closing text should be skipped or reported, never borrowed from the original author. See [PRIVACY.md](PRIVACY.md).
+
+## Tools
+
+Use [Raphael Publish](https://publish.raphael.app/) or the included [local adapter](skills/koki-wechat-article/references/raphael.md). The optional adapter requires Node.js 20+ and `jsdom` 26.1.0: run `npm install --ignore-scripts` in the repository root. Download the supported Raphael bundle separately from its official source. The bundle is not redistributed here.
+
+## About Koki & contact
+
+Created by **Koki**, creator of Anti-Distill Skill and initiator of Social Coding.
+
+[Website](https://kokiai.net/) · [X / Twitter](https://x.com/kokisanai) · [Instagram](https://www.instagram.com/kokisanai/) · [YouTube](https://www.youtube.com/@kokiainet) · [LinkedIn](https://www.linkedin.com/in/koki-x-309815217/) · [Substack](https://kokimemo.substack.com/)
+
+For collaborations or questions, message me on [X](https://x.com/kokisanai) or [LinkedIn](https://www.linkedin.com/in/koki-x-309815217/). For a skill bug or suggestion, open an issue in this repository. Please keep private media and account details out of public issues.
+
+## Other creator skills
+
+- [Koki Short Video Skill](https://github.com/leilei926524-tech/koki-short-video-skill)
+- [Koki Long Video Skill](https://github.com/leilei926524-tech/koki-long-video-skill)
+
+## License
+
+Original skill instructions and adapter code are licensed under [MIT](LICENSE). Third-party products, fonts, media, and services retain their own licenses and terms.

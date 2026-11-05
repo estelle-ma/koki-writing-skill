@@ -1,6 +1,6 @@
 {
-  "name": "koki-creator-skills",
-  "version": "0.1.0",
+  "name": "koki-writing-skill",
+  "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "engines": {
