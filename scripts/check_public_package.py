@@ -10,7 +10,7 @@ ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).reso
 ROOT_FILES = {"README.md", "README.zh-CN.md", "PRIVACY.md", "LICENSE", ".gitignore", "creator.example.yaml", "package.json", "package-lock.json"}
 ALLOWED_SUFFIXES = {".md", ".yaml", ".cjs", ".py"}
 # Exact, visually reviewed public demos. Re-review media before changing hashes.
-PUBLIC_MEDIA = {'docs/media/article-opening.jpg': 'bcb2a3956b717470f6b39ffd2e75e8f7f489ff9d1388d1c5cd1a14fa3326de25', 'docs/media/article-detail.jpg': '640fb403e978cd9e1ce73f3a946a707c6eae775f7fe95b49698b5d9cf6f32cad'}
+PUBLIC_MEDIA = {'docs/media/article-detail.jpg': '640fb403e978cd9e1ce73f3a946a707c6eae775f7fe95b49698b5d9cf6f32cad', 'docs/media/article-opening-en.jpg': '4a84a439e06963a69f1f41755f394dcc1d058a1a6d0b0af93c67a74428b4c6e2', 'docs/media/article-opening.jpg': 'bcb2a3956b717470f6b39ffd2e75e8f7f489ff9d1388d1c5cd1a14fa3326de25'}
 PATTERNS = {
     "private-absolute-path": re.compile(r"/(?:Users|home|private/var|var/folders)/[^\s`\"'<>]+"),
     "windows-user-path": re.compile(r"\b[A-Za-z]:\\Users\\[^\s`\"'<>]+"),
@@ -40,7 +40,7 @@ def check():
             if hashlib.sha256(path.read_bytes()).hexdigest() != PUBLIC_MEDIA[str(rel)]:
                 findings.append((str(rel), 0, "unreviewed-media-change"))
             continue
-        allowed = str(rel) in ROOT_FILES or (rel.parts[0] in {"skills", "scripts", "docs"} and path.suffix in ALLOWED_SUFFIXES) or str(rel) in {"examples/voice-note.txt", "examples/article.md", "examples/article-preview.html"}
+        allowed = str(rel) in ROOT_FILES or (rel.parts[0] in {"skills", "scripts", "docs"} and path.suffix in ALLOWED_SUFFIXES) or str(rel) in {"examples/voice-note.txt", "examples/article.md", "examples/article-preview.html", "examples/source-script-en.txt", "examples/article-en.md", "examples/article-preview-en.html"}
         if not allowed:
             findings.append((str(rel), 0, "unexpected-public-file"))
             continue
