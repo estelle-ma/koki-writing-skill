@@ -1,4 +1,0 @@
-interface:
-  display_name: "竖屏口播剪辑"
-  short_description: "精剪单人口播，按中英文语义添加字幕、首帧封面、主题素材与可配置的结尾引导文字"
-  default_prompt: "用 $vertical-talking-head 剪这段竖屏口播，采用我提供的素材与结尾配置，保存可编辑项目。"
