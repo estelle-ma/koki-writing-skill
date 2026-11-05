@@ -24,3 +24,7 @@ __pycache__/
 *.jpg
 *.jpeg
 *.webp
+
+# Intentionally published, reviewed demo media
+!docs/media/*.jpg
+!docs/media/*.gif

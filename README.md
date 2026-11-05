@@ -6,29 +6,75 @@ Turn spoken ideas into articles that still sound like you, with evidence, real i
 
 A standalone skill from my own creator workflow, shared as a configurable public edition. Instructions and workflow references are available in English and Simplified Chinese.
 
-## What it does
+## See the result
 
-- Preserve the author's wording, stance, emotion, and narrative order.
-- Add traceable evidence and real images beside the relevant passages.
-- Keep approved text and images when revising; respect layout-only requests.
-- Deliver editable Markdown, copyable WeChat HTML, images, and source records.
-- Check actual mobile layouts at approximately 390 px and 360 px.
+**A voice note becomes a readable article, while keeping the author's voice.** These are actual mobile views of my article about running a creator workflow with AI.
 
-## Install & use
+<p align="center">
+  <img src="docs/media/article-opening.jpg" width="300" alt="Real article: title, red emphasis and mobile paragraphs">
+  <img src="docs/media/article-detail.jpg" width="300" alt="Real article: section heading, links and body typography">
+</p>
 
-Send [this repository](https://github.com/leilei926524-tech/koki-writing-skill) to your agent and ask:
+| You provide | You get |
+| --- | --- |
+| A rough transcript, idea, or draft | An editable article preserving your wording and stance |
+| Claims and topics that need support | Sources, relevant real images, and captions |
+| Your layout preferences | A Raphael layout with a copy-to-WeChat button |
+
+Try the small real example: [original voice note](examples/voice-note.txt) → [edited Markdown](examples/article.md) → [Raphael HTML](examples/article-preview.html). Download the HTML and open it in a browser to try its copy button. The HTML is an excerpt; the screenshots above show the larger article.
+
+## Quick start
+
+### 1. Prepare the tools
+
+Use Codex or another Agent Skills-compatible agent with access to your text/files. Research and real web images need browsing. Layout uses [Raphael Publish](https://publish.raphael.app/); the included optional local adapter needs Node.js 20+ and `jsdom` 26.1.0. Writing alone does not need a video editor.
+
+### 2. Install this skill
+
+Paste the following into Codex:
 
 ```text
-Install the skill in skills/koki-wechat-article from this repository. If a skill with the same name already exists, keep it and tell me about the conflict before replacing it.
+$skill-installer Install the skill from
+https://github.com/leilei926524-tech/koki-writing-skill/tree/main/skills/koki-wechat-article
+Keep an existing skill with the same name and report a conflict before replacing it.
 ```
 
-Alternatively, download the repository and copy the complete `skills/koki-wechat-article` folder into your tool's personal skill directory. Use a tool that supports Agent Skills; editing also needs an available editor connection.
+Start a new chat after installation, then invoke `$koki-wechat-article`. Other Agent Skills-compatible tools can use the same complete `skills/koki-wechat-article` folder through their own installation method. See [Codex skills documentation](https://learn.chatgpt.com/docs/build-skills).
+
+### 3. Provide your material
+
+Paste a transcript/draft or attach a text file. Include any must-keep wording, verified source links, preferred title, and image folder. A rough voice-input transcript is enough to begin; an existing final draft can also be used for layout only.
+
+### 4. Make your first article
 
 ```text
-Use $koki-wechat-article to turn this transcript into a WeChat article. Keep my voice, verify factual claims, find real images, and deliver editable Markdown and a local Raphael layout.
+Use $koki-wechat-article.
+Input: the transcript I attached.
+Language: Chinese. Keep my voice, opinions, and meaningful repetition.
+Verify names and factual claims; add relevant real images with sources.
+Use the Raphael sspai theme and check mobile readability.
+Deliver editable Markdown, local layout HTML, WeChat rich text, images, and source notes.
+Save the draft in ./outputs/my-article/.
 ```
 
-The default [SKILL.md](skills/koki-wechat-article/SKILL.md) is in English. A [Chinese edition](skills/koki-wechat-article/SKILL.zh-CN.md) is included; references contain both languages. Output language follows your request.
+Want to try before preparing your own material? Point the agent to `examples/voice-note.txt` and ask it to make a layout from that excerpt.
+
+### 5. Revise and use the result
+
+```text
+Keep the body text and approved images unchanged. Only adjust paragraphs,
+heading hierarchy, emphasis, and image placement for phone reading.
+```
+
+Open the delivered layout HTML in a browser → click **复制公众号正文** → paste into WeChat's editor → check the images and final appearance → publish when ready. The Markdown remains editable for later revisions.
+
+| Deliverable | Purpose |
+| --- | --- |
+| Markdown | Continue editing the text |
+| Layout HTML + WeChat rich text | Preview and copy the formatted article |
+| Images and source records | Trace evidence and reuse relevant assets |
+
+For the optional local adapter, run `npm install --ignore-scripts` in the repository root and follow [the complete render command](skills/koki-wechat-article/references/raphael.md). The supported official engine is downloaded separately.
 
 ## Make it yours
 
@@ -54,3 +100,5 @@ For collaborations or questions, message me on [X](https://x.com/kokisanai) or [
 ## License
 
 Original skill instructions and adapter code are licensed under [MIT](LICENSE). Third-party products, fonts, media, and services retain their own licenses and terms.
+
+Demo media are included for showcasing the workflow; rights in the footage, likenesses, and third-party excerpts remain with their respective owners and are not granted by the MIT code license. See [media details](docs/media/README.md).

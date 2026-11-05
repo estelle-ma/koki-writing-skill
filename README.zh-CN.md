@@ -6,29 +6,75 @@
 
 这是从我的日常创作流程整理出的独立 Skill，公开版已做脱敏并支持自定义。技能说明与流程参考提供英文和简体中文版本。
 
-## 能做什么
+## 先看实际效果
 
-- 保留作者的原话、立场、情绪与叙述顺序。
-- 在对应段落补可追溯证据和真实配图。
-- 续改保留已确认正文与图片；仅排版时不擅自改词。
-- 交付可编辑 Markdown、可复制公众号 HTML、原图与来源记录。
-- 实际检查约 390 px 与 360 px 的手机阅读效果。
+**把随口说的想法，变成仍然像你自己写的公众号文章。** 下面是我这篇「一个人用 AI 做自媒体」文章的真实手机排版。
 
-## 安装与使用
+<p align="center">
+  <img src="docs/media/article-opening.jpg" width="300" alt="真实文章首屏：标题、红色重点与手机段落">
+  <img src="docs/media/article-detail.jpg" width="300" alt="真实文章细节：小标题、链接与正文排版">
+</p>
 
-把[本仓库链接](https://github.com/leilei926524-tech/koki-writing-skill)发给你的 Agent，并说明：
+| 你交给它 | 它帮你完成 |
+| --- | --- |
+| 随口说的转写、想法或草稿 | 保留原话、观点和语气的可编辑正文 |
+| 需要补证的论点与主题 | 来源、对应的真实图片和图注 |
+| 自己的排版偏好 | 带「复制公众号正文」按钮的 Raphael 排版稿 |
+
+可以直接看这个真实小例子：[原始口播](examples/voice-note.txt) → [整理后的 Markdown](examples/article.md) → [Raphael HTML](examples/article-preview.html)。下载 HTML 后用浏览器打开，就能试复制按钮。HTML 展示文章节选，上面的截图来自完整文章。
+
+## 从安装到第一次出结果
+
+### 1. 准备工具
+
+使用 Codex，或其他支持 Agent Skills、能读取你文稿和文件的 Agent。找资料与真实网页配图需要联网；排版使用 [Raphael Publish](https://publish.raphael.app/)。只有运行仓库自带的本地适配器时，才需要 Node.js 20+ 和 `jsdom` 26.1.0。写文章无需连接视频编辑器。
+
+### 2. 安装这个 Skill
+
+在 Codex 里直接粘贴：
 
 ```text
-安装本仓库 skills/koki-wechat-article 中的技能。如果已有同名 Skill，先保留并说明冲突位置，不要直接覆盖。
+$skill-installer 安装这个地址里的技能：
+https://github.com/leilei926524-tech/koki-writing-skill/tree/main/skills/koki-wechat-article
+如果已有同名 Skill，先保留并说明冲突，不要直接覆盖。
 ```
 
-也可以下载仓库，把完整的 `skills/koki-wechat-article` 文件夹复制到工具的个人技能目录。需要使用支持 Agent Skills 的工具；剪辑还需要可用的编辑器连接。
+安装后开一个新对话，再用 `$koki-wechat-article` 调用。其他支持 Agent Skills 的工具，可按自己的安装方式导入完整的 `skills/koki-wechat-article` 文件夹。也可查看 [Codex 官方技能文档](https://learn.chatgpt.com/docs/build-skills)。
+
+### 3. 把素材交给它
+
+直接粘贴口播转写、草稿，或附上文稿文件。补充必须保留的原话、已核实的来源链接、想用的标题、配图文件夹。语音输入留下的粗稿就可以开始；已有定稿也可以只做排版。
+
+### 4. 做第一篇文章
 
 ```text
-用 $koki-wechat-article 把这份口播整理成公众号文章。保留我的语气，核对事实、补真实配图，交付可编辑 Markdown 和本地 Raphael 排版稿。
+用 $koki-wechat-article。
+输入：我附上的口播转写。
+语言：中文。保留我的语气、观点和有表达作用的重复。
+核对人名与事实，补相关的真实配图并记录来源。
+用 Raphael 的 sspai 主题排版，检查手机阅读效果。
+交付可编辑 Markdown、本地排版 HTML、微信富文本、图片和来源说明。
+草稿保存到 ./outputs/my-article/。
 ```
 
-默认加载的 [SKILL.md](skills/koki-wechat-article/SKILL.md) 为英文，同时提供完整的[中文说明](skills/koki-wechat-article/SKILL.zh-CN.md)，流程参考包含中英两种语言。实际输出语言按你的要求。
+还没准备自己的内容，也可以先让 Agent 读取仓库里的 `examples/voice-note.txt`，用这段真实口播试做一份排版。
+
+### 5. 修改与使用
+
+```text
+保留现在的正文和已确认图片，不改字句。
+只调整分段、小标题层级、重点标注和图片位置，让手机读起来更舒服。
+```
+
+用浏览器打开交付的排版 HTML → 点击 **复制公众号正文** → 粘贴到公众号后台 → 检查图片入库和最终显示 → 准备好后再发表。后续改稿继续改 Markdown 即可。
+
+| 最后拿到什么 | 怎么用 |
+| --- | --- |
+| Markdown 正文 | 继续编辑文字 |
+| 排版 HTML 与微信富文本 | 预览、复制公众号正文 |
+| 图片和来源记录 | 回查证据、复用对应素材 |
+
+要运行可选的本地排版适配器，在仓库根目录执行 `npm install --ignore-scripts`，再按[完整排版命令](skills/koki-wechat-article/references/raphael.md)操作；支持的官方引擎需单独下载。
 
 ## 改成自己的风格
 
@@ -54,3 +100,5 @@
 ## 开源许可
 
 原创技能说明与适配代码采用 [MIT](LICENSE) 许可。第三方产品、字体、媒体与服务保留各自许可和条款。
+
+演示图片与片段用于展示工作流；原片、人物形象及第三方摘录的权利归相应权利人，不随技能代码授予 MIT 许可。详见[素材说明](docs/media/README.md)。
