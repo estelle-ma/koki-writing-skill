@@ -2,6 +2,8 @@
 
 ## English
 
+The English README uses `article-opening-en.jpg`, a 390-pixel screenshot of an English article excerpt rendered by the same verified Raphael adapter. `examples/source-script-en.txt`, `examples/article-en.md`, and `examples/article-preview-en.html` are matching English examples. The text comes from Koki's existing English script/article; the preview controls are also in English. The Chinese README retains its original Chinese article screenshots and examples.
+
 The two JPEGs are actual 390-pixel mobile screenshots of Koki's article layout. The voice note, edited Markdown, and locally rendered HTML in `examples/` show a matching section of that article. The preview HTML was rendered with the same verified Raphael adapter used by the skill; it includes no third-party engine bundle.
 
 ## 简体中文
