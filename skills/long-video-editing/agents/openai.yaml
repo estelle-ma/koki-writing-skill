@@ -1,4 +1,0 @@
-interface:
-  display_name: "长视频剪辑｜教程与访谈"
-  short_description: "教程按案例演示、访谈按文稿重排，按需完成剪辑、四比例封面、shownote 与时间轴"
-  default_prompt: "用 $long-video-editing 处理这条长视频，按教程或访谈选择流程，完成我本次要求的部分。"
