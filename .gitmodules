@@ -1,0 +1,47 @@
+[submodule "integrations/estelle-content-studio/upstream/guizang-social-card-skill"]
+	path = integrations/estelle-content-studio/upstream/guizang-social-card-skill
+	url = https://github.com/op7418/guizang-social-card-skill.git
+
+[submodule "integrations/estelle-content-studio/upstream/xiaohongshu-text-layout"]
+	path = integrations/estelle-content-studio/upstream/xiaohongshu-text-layout
+	url = https://github.com/NowhereMan-in-Galaxy/xiaohongshu-text-layout.git
+
+[submodule "integrations/estelle-content-studio/upstream/lieflat-html-design"]
+	path = integrations/estelle-content-studio/upstream/lieflat-html-design
+	url = https://github.com/larashero3-dotcom/lieflat-html-design.git
+
+[submodule "integrations/estelle-content-studio/upstream/frontend-post"]
+	path = integrations/estelle-content-studio/upstream/frontend-post
+	url = https://github.com/KellyGong0301/frontend-post.git
+
+[submodule "integrations/estelle-content-studio/upstream/obsidian-note-renderer"]
+	path = integrations/estelle-content-studio/upstream/obsidian-note-renderer
+	url = https://github.com/filosfino/obsidian-note-renderer.git
+
+[submodule "integrations/estelle-content-studio/upstream/sparki-video-editor"]
+	path = integrations/estelle-content-studio/upstream/sparki-video-editor
+	url = https://github.com/sparki-ai/sparki-video-editor.git
+
+[submodule "integrations/estelle-content-studio/upstream/eachlabs-skills"]
+	path = integrations/estelle-content-studio/upstream/eachlabs-skills
+	url = https://github.com/eachlabs/skills.git
+
+[submodule "integrations/estelle-content-studio/upstream/ffmpeg-skill"]
+	path = integrations/estelle-content-studio/upstream/ffmpeg-skill
+	url = https://github.com/kajisho5/ffmpeg-skill.git
+
+[submodule "integrations/estelle-content-studio/upstream/remotion-skills"]
+	path = integrations/estelle-content-studio/upstream/remotion-skills
+	url = https://github.com/remotion-dev/skills.git
+
+[submodule "integrations/estelle-content-studio/upstream/xiaohongshu-publishing"]
+	path = integrations/estelle-content-studio/upstream/xiaohongshu-publishing
+	url = https://github.com/white0dew/XiaohongshuSkills.git
+
+[submodule "integrations/estelle-content-studio/upstream/koki-short-video-skill"]
+	path = integrations/estelle-content-studio/upstream/koki-short-video-skill
+	url = https://github.com/estelle-ma/koki-short-video-skill.git
+
+[submodule "integrations/estelle-content-studio/upstream/koki-long-video-skill"]
+	path = integrations/estelle-content-studio/upstream/koki-long-video-skill
+	url = https://github.com/estelle-ma/koki-long-video-skill.git
